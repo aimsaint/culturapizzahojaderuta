@@ -1,92 +1,124 @@
-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CulturaPizza — Hoja de Ruta Constitución C.A.</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--font-sans,sans-serif);color:var(--color-text-primary);background:transparent}
-.wrap{padding:1rem 0 2rem}
-.top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:1.5rem;flex-wrap:wrap}
-.meta{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-.pill{font-size:11px;padding:3px 10px;border-radius:20px;border:0.5px solid var(--color-border-secondary);color:var(--color-text-secondary)}
-.pill.amber{background:#FAEEDA;color:#633806;border-color:#EF9F27}
-.pill.blue{background:#E6F1FB;color:#0C447C;border-color:#85B7EB}
-.pill.green{background:#EAF3DE;color:#27500A;border-color:#97C459}
-.summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:1.5rem}
-.scard{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:12px 14px}
-.scard-n{font-size:20px;font-weight:500}
-.scard-l{font-size:11px;color:var(--color-text-secondary);margin-top:2px;line-height:1.4}
-.prog-wrap{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:14px 16px;margin-bottom:1.5rem}
-.prog-label{font-size:12px;color:var(--color-text-secondary);margin-bottom:8px}
-.prog-track{height:6px;border-radius:3px;background:var(--color-background-secondary);overflow:hidden}
-.prog-fill{height:100%;border-radius:3px;background:#BA7517;transition:width .4s}
-.prog-pct{font-size:12px;color:var(--color-text-secondary);margin-top:6px;text-align:right}
-.phase-block{margin-bottom:10px}
-.phase-header{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:var(--border-radius-md);background:var(--color-background-secondary);cursor:pointer;border:0.5px solid var(--color-border-tertiary);user-select:none}
-.phase-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.phase-name{font-size:13px;font-weight:500;flex:1}
-.phase-meta{font-size:11px;color:var(--color-text-secondary)}
-.phase-chevron{font-size:10px;color:var(--color-text-secondary);transition:transform .2s}
-.phase-chevron.open{transform:rotate(180deg)}
-.steps{margin-top:6px;display:none;flex-direction:column;gap:6px}
-.steps.open{display:flex}
-.step{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);background:var(--color-background-primary);overflow:hidden}
-.step-header{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;cursor:pointer}
-.step-num{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;flex-shrink:0;margin-top:1px}
-.step-info{flex:1}
-.step-title{font-size:13px;font-weight:500;line-height:1.4}
-.step-sub{font-size:11px;color:var(--color-text-secondary);margin-top:2px}
-.step-right{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0}
-.chk{width:18px;height:18px;border-radius:4px;border:0.5px solid var(--color-border-secondary);cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .15s;background:var(--color-background-primary)}
-.chk.done{background:#BA7517;border-color:#BA7517}
-.chk svg{display:none}
-.chk.done svg{display:block}
-.cost-tag{font-size:11px;padding:2px 8px;border-radius:10px;background:#FAEEDA;color:#633806;white-space:nowrap}
-.time-tag{font-size:11px;padding:2px 8px;border-radius:10px;background:var(--color-background-secondary);color:var(--color-text-secondary);white-space:nowrap}
-.docs{margin:0 14px 12px 46px;padding:10px 12px;background:var(--color-background-secondary);border-radius:var(--border-radius-md);display:none}
-.docs.open{display:block}
-.docs-title{font-size:11px;font-weight:500;color:var(--color-text-secondary);margin-bottom:6px;text-transform:uppercase;letter-spacing:.05em}
-.doc-item{display:flex;align-items:flex-start;gap:6px;font-size:12px;color:var(--color-text-secondary);padding:3px 0;line-height:1.4}
-.doc-item::before{content:'·';flex-shrink:0}
-.note-box{border-left:2px solid #BA7517;border-radius:0;padding:10px 14px;background:#FAEEDA20;margin:0 14px 12px 46px;display:none}
-.note-box.open{display:block}
-.note-box p{font-size:12px;color:var(--color-text-secondary);line-height:1.5}
-.toggle-docs{font-size:11px;color:var(--color-text-secondary);border:none;background:none;cursor:pointer;padding:0;margin-left:46px;margin-bottom:8px;display:none}
-.toggle-docs.visible{display:inline-block}
-.step.checked .step-title{text-decoration:line-through;color:var(--color-text-secondary)}
-.total-row{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:14px 16px;display:flex;align-items:center;justify-content:space-between;margin-top:1rem;flex-wrap:wrap;gap:8px}
-.total-label{font-size:13px;color:var(--color-text-secondary)}
-.total-val{font-size:18px;font-weight:500}
-.ask-btn{margin-top:1rem;width:100%}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{font-size:16px}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8f7f5;color:#1a1a1a;min-height:100vh;padding:0}
+
+  /* ---- Layout ---- */
+  .page{max-width:860px;margin:0 auto;padding:40px 24px 80px}
+  .brand{display:flex;align-items:center;gap:10px;margin-bottom:36px;padding-bottom:20px;border-bottom:1px solid #e5e0d8}
+  .brand-mark{width:36px;height:36px;background:#C8382A;border-radius:7px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:white;letter-spacing:.05em;flex-shrink:0}
+  .brand-name{font-size:1.1rem;font-weight:600;color:#1a1a1a;letter-spacing:.01em}
+  .brand-name em{color:#C8382A;font-style:normal}
+  .page-title{font-size:22px;font-weight:600;margin-bottom:6px}
+  .page-sub{font-size:14px;color:#666;margin-bottom:24px}
+
+  /* ---- Pills ---- */
+  .meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+  .pill{font-size:11px;padding:4px 11px;border-radius:20px;font-weight:500}
+  .pill-amber{background:#FAEEDA;color:#633806;border:1px solid #EF9F27}
+  .pill-blue{background:#E6F1FB;color:#0C447C;border:1px solid #85B7EB}
+  .pill-green{background:#EAF3DE;color:#27500A;border:1px solid #97C459}
+
+  /* ---- Summary cards ---- */
+  .summary{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px}
+  @media(max-width:600px){.summary{grid-template-columns:repeat(2,1fr)}}
+  .scard{background:#fff;border:1px solid #e5e0d8;border-radius:10px;padding:14px 16px}
+  .scard-n{font-size:22px;font-weight:600;line-height:1}
+  .scard-l{font-size:11px;color:#888;margin-top:4px;line-height:1.4}
+
+  /* ---- Progress ---- */
+  .prog-wrap{background:#fff;border:1px solid #e5e0d8;border-radius:12px;padding:16px 18px;margin-bottom:20px}
+  .prog-label{font-size:12px;color:#888;margin-bottom:8px}
+  .prog-track{height:6px;border-radius:3px;background:#f0ece4;overflow:hidden}
+  .prog-fill{height:100%;border-radius:3px;background:#BA7517;transition:width .4s}
+  .prog-pct{font-size:12px;color:#888;margin-top:6px;text-align:right}
+
+  /* ---- Phase blocks ---- */
+  .phase-block{margin-bottom:8px}
+  .phase-header{display:flex;align-items:center;gap:10px;padding:11px 14px;border-radius:10px;background:#f4f1ec;cursor:pointer;border:1px solid #e5e0d8;user-select:none;transition:background .15s}
+  .phase-header:hover{background:#ede9e1}
+  .phase-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+  .phase-name{font-size:13px;font-weight:600;flex:1;color:#1a1a1a}
+  .phase-meta{font-size:11px;color:#888}
+  .phase-chevron{font-size:10px;color:#aaa;transition:transform .2s;margin-left:4px}
+  .phase-chevron.open{transform:rotate(180deg)}
+  .steps{margin-top:6px;display:none;flex-direction:column;gap:5px}
+  .steps.open{display:flex}
+
+  /* ---- Step cards ---- */
+  .step{border:1px solid #e5e0d8;border-radius:12px;background:#fff;overflow:hidden;transition:border-color .15s}
+  .step:hover{border-color:#c8bfaf}
+  .step-header{display:flex;align-items:flex-start;gap:10px;padding:13px 14px;cursor:pointer}
+  .step-num{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;flex-shrink:0;margin-top:1px}
+  .step-info{flex:1}
+  .step-title{font-size:13px;font-weight:600;line-height:1.4;color:#1a1a1a}
+  .step-sub{font-size:11px;color:#888;margin-top:2px}
+  .step-right{display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0}
+  .chk{width:20px;height:20px;border-radius:5px;border:1.5px solid #d0c8be;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .15s;background:#fff}
+  .chk:hover{border-color:#BA7517}
+  .chk.done{background:#BA7517;border-color:#BA7517}
+  .chk svg{display:none}
+  .chk.done svg{display:block}
+  .cost-tag{font-size:11px;padding:2px 9px;border-radius:10px;background:#FAEEDA;color:#633806;white-space:nowrap;font-weight:500}
+  .time-tag{font-size:11px;padding:2px 9px;border-radius:10px;background:#f4f1ec;color:#666;white-space:nowrap}
+  .step.checked .step-title{text-decoration:line-through;color:#aaa}
+
+  /* ---- Docs & Notes ---- */
+  .docs{margin:0 14px 13px 48px;padding:11px 13px;background:#f8f7f5;border-radius:8px;display:none;border:1px solid #e5e0d8}
+  .docs.open{display:block}
+  .docs-title{font-size:10px;font-weight:600;color:#999;margin-bottom:7px;text-transform:uppercase;letter-spacing:.07em}
+  .doc-item{display:flex;align-items:flex-start;gap:7px;font-size:12px;color:#555;padding:3px 0;line-height:1.5}
+  .doc-bullet{width:4px;height:4px;border-radius:50%;background:#BA7517;flex-shrink:0;margin-top:5px}
+  .note-box{border-left:2px solid #BA7517;padding:9px 13px;background:#fdf6ec;margin:0 14px 13px 48px;display:none;border-radius:0 6px 6px 0}
+  .note-box.open{display:block}
+  .note-box p{font-size:12px;color:#7a5c1e;line-height:1.6}
+
+  /* ---- Total & Footer ---- */
+  .total-row{border:1px solid #e5e0d8;border-radius:12px;padding:15px 18px;display:flex;align-items:center;justify-content:space-between;margin-top:16px;background:#fff;flex-wrap:wrap;gap:8px}
+  .total-label{font-size:13px;color:#666}
+  .total-val{font-size:20px;font-weight:600;color:#1a1a1a}
+  .footer{margin-top:48px;padding-top:20px;border-top:1px solid #e5e0d8;font-size:12px;color:#aaa;text-align:center}
 </style>
+</head>
+<body>
+<div class="page">
 
-<div class="wrap">
-<h2 style="position:absolute;left:-9999px">Hoja de ruta — constitución de compañía anónima en Venezuela</h2>
-
-<div class="top">
-  <div>
-    <div style="font-size:16px;font-weight:500;margin-bottom:6px">Constitución C.A. — Venezuela</div>
-    <div class="meta">
-      <span class="pill amber">Duración estimada: 3–6 semanas</span>
-      <span class="pill blue">Costo total: ~$930 – $1.400</span>
-      <span class="pill green">12 pasos</span>
-    </div>
+  <div class="brand">
+    <div class="brand-mark">CP</div>
+    <div class="brand-name">Cultura<em>Pizza</em></div>
   </div>
-</div>
 
-<div class="summary" id="summary-cards"></div>
+  <div class="page-title">Constitución C.A. — Venezuela</div>
+  <div class="page-sub">Hoja de ruta paso a paso para constituir la Compañía Anónima</div>
 
-<div class="prog-wrap">
-  <div class="prog-label">Progreso general</div>
-  <div class="prog-track"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
-  <div class="prog-pct" id="prog-pct">0 de 12 completados</div>
-</div>
+  <div class="meta">
+    <span class="pill pill-amber">Duración estimada: 3–6 semanas</span>
+    <span class="pill pill-blue">Costo total: ~$930 – $1.400</span>
+    <span class="pill pill-green">12 pasos</span>
+  </div>
 
-<div id="phases"></div>
+  <div class="summary" id="summary-cards"></div>
 
-<div class="total-row">
-  <span class="total-label">Presupuesto total estimado</span>
-  <span class="total-val">$930 – $1.400 USD</span>
-</div>
+  <div class="prog-wrap">
+    <div class="prog-label">Progreso general</div>
+    <div class="prog-track"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
+    <div class="prog-pct" id="prog-pct">0 de 12 completados</div>
+  </div>
 
-<button class="ask-btn" onclick="sendPrompt('¿Qué abogado mercantil necesito para constituir una C.A. en Venezuela y qué le debo pedir exactamente?')">¿Qué le pido al abogado mercantil? ↗</button>
+  <div id="phases"></div>
+
+  <div class="total-row">
+    <span class="total-label">Presupuesto total estimado</span>
+    <span class="total-val">$930 – $1.400 USD</span>
+  </div>
+
+  <div class="footer">CulturaPizza · Academia de Pizza · Venezuela · 2025</div>
 </div>
 
 <script>
@@ -213,9 +245,11 @@ const PHASES = [
   }
 ];
 
-let checked = {};
-let openPhases = {p1:true,p2:true,p3:false,p4:false};
+let checked = JSON.parse(localStorage.getItem('cp_checked') || '{}');
+let openPhases = {p1:true,p2:false,p3:false,p4:false};
 let openDocs = {};
+
+function save(){ localStorage.setItem('cp_checked', JSON.stringify(checked)); }
 
 function togglePhase(id){
   openPhases[id] = !openPhases[id];
@@ -229,6 +263,7 @@ function toggleDocs(id,e){
 function toggleCheck(id,e){
   e.stopPropagation();
   checked[id] = !checked[id];
+  save();
   render();
 }
 
@@ -241,16 +276,14 @@ function render(){
   document.getElementById('prog-fill').style.width = pct+'%';
   document.getElementById('prog-pct').textContent = done+' de '+total+' completados';
 
-  const p1done = PHASES[0].steps.filter(s=>checked[s.id]).length;
-  const p2done = PHASES[1].steps.filter(s=>checked[s.id]).length;
-  const p3done = PHASES[2].steps.filter(s=>checked[s.id]).length;
-  const p4done = PHASES[3].steps.filter(s=>checked[s.id]).length;
-  document.getElementById('summary-cards').innerHTML = `
-    <div class="scard"><div class="scard-n" style="color:#BA7517">${p1done}/${PHASES[0].steps.length}</div><div class="scard-l">Decisiones previas</div></div>
-    <div class="scard"><div class="scard-n" style="color:#185FA5">${p2done}/${PHASES[1].steps.length}</div><div class="scard-l">Documentación legal</div></div>
-    <div class="scard"><div class="scard-n" style="color:#3B6D11">${p3done}/${PHASES[2].steps.length}</div><div class="scard-l">Registro Mercantil</div></div>
-    <div class="scard"><div class="scard-n" style="color:#534AB7">${p4done}/${PHASES[3].steps.length}</div><div class="scard-l">Registros post-const.</div></div>
-  `;
+  document.getElementById('summary-cards').innerHTML = PHASES.map((ph,i)=>{
+    const d = ph.steps.filter(s=>checked[s.id]).length;
+    const labels = ['Decisiones previas','Documentación legal','Registro Mercantil','Post-constitución'];
+    return `<div class="scard">
+      <div class="scard-n" style="color:${ph.color}">${d}/${ph.steps.length}</div>
+      <div class="scard-l">${labels[i]}</div>
+    </div>`;
+  }).join('');
 
   document.getElementById('phases').innerHTML = PHASES.map(ph=>{
     const isOpen = openPhases[ph.id];
@@ -266,18 +299,18 @@ function render(){
             <div class="step-sub">${s.sub}</div>
           </div>
           <div class="step-right">
-            <div class="chk${isDone?' done':''}" onclick="toggleCheck('${s.id}',event)">
-              <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="chk${isDone?' done':''}" onclick="toggleCheck('${s.id}',event)" title="Marcar como completado">
+              <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
             <span class="cost-tag">${s.cost}</span>
             <span class="time-tag">${s.time}</span>
           </div>
         </div>
         <div class="docs${docsOpen?' open':''}">
-          <div class="docs-title">Qué hacer / documentos necesarios</div>
-          ${s.docs.map(d=>`<div class="doc-item"><span>${d}</span></div>`).join('')}
+          <div class="docs-title">Qué hacer · Documentos necesarios</div>
+          ${s.docs.map(d=>`<div class="doc-item"><div class="doc-bullet"></div><span>${d}</span></div>`).join('')}
         </div>
-        ${s.note?`<div class="note-box${docsOpen?' open':''}"><p>${s.note}</p></div>`:''}
+        ${s.note?`<div class="note-box${docsOpen?' open':''}"><p>💡 ${s.note}</p></div>`:''}
       </div>`;
     }).join('');
 
@@ -285,7 +318,7 @@ function render(){
       <div class="phase-header" onclick="togglePhase('${ph.id}')">
         <div class="phase-dot" style="background:${ph.color}"></div>
         <span class="phase-name">${ph.label}</span>
-        <span class="phase-meta">${ph.meta} &nbsp;·&nbsp; ${phDone}/${ph.steps.length}</span>
+        <span class="phase-meta">${ph.meta} · ${phDone}/${ph.steps.length}</span>
         <span class="phase-chevron${isOpen?' open':''}">▼</span>
       </div>
       <div class="steps${isOpen?' open':''}">${stepsHtml}</div>
@@ -295,3 +328,5 @@ function render(){
 
 render();
 </script>
+</body>
+</html>
